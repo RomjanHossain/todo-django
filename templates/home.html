@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{%block content%}
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Todo</th>
+                <th scope="col">complete</th>
+                <th scope="col">created</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for item in lists%}
+            {%if item.completed%}
+            <tr class="table-success">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.item}}</td>
+                <td>{{item.completed}}</td>
+                <td>{{item.created}}</td>
+            </tr>
+            {%else%}
+            <tr>
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.item}}</td>
+                <td>{{item.completed}}</td>
+                <td>{{item.created}}</td>
+            </tr>
+            {%endif%}
+            {%endfor%}
+            <!-- <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr> -->
+        </tbody>
+    </table>
+</div>
+{%endblock%}
