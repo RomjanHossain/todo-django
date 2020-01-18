@@ -1,0 +1,60 @@
+.striker{
+    text-decoration: line-through;
+}
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.btn {
+  font-size: 14px;
+  margin: 0 .5em;
+  border-radius: 2em;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  background: none;
+  color: darken($color-main, 20%);
+  border: 1px solid;
+  letter-spacing: 1px;
+  font-family: $font-family;
+  color: #4fc08d;
+  border: $color-main 1px solid;
+  transition: 250ms ease-out;
+  &:hover, &:focus {
+    color: #fff;
+    background: $color-main;
+  }
+}
+
+.form {
+  width: 100%;
+  padding: 1.5rem 1rem 0 1rem;
+  display: flex;
+  &__input {
+    width: 100%;
+    font-size: 14px;
+    margin: 0 .5em;
+    border-radius: 2em;
+    padding: 0.75em 1.5em;
+    background: none;
+    font-family: $font-family;
+    border: #e3e3e3 1px solid;
+    transition: border 250ms ease-out;
+    &:focus {
+      border: $color-main 1px solid;
+      outline: none;
+    }
+  }
+  &__input,
+  &__submit-btn {
+  }
+}

@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 {%block content%}
 <div class="container">
+    <br>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -15,7 +16,7 @@
             {%if item.completed%}
             <tr class="table-success">
                 <th scope="row">{{item.id}}</th>
-                <td>{{item.item}}</td>
+                <td class="striker">{{item.item}}</td>
                 <td>{{item.completed}}</td>
                 <td>{{item.created}}</td>
             </tr>
