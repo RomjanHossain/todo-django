@@ -9,3 +9,6 @@ class Lists(models.Model):
 
     def __str__(self):
         return self.item
+
+    class Meta:
+        verbose_name_plural = 'Lists'

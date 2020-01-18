@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{%block content%}
+<div class="container">
+    <form class="form" method="POST">
+        {%csrf_token%}
+        <input class="input form__input mr-sm-2" name="item" value="{{idd}}"/>
+        <button class="btn form__submit-btn btn btn-outline-success my-2 my-sm-0" type="submit">Change</button>
+    </form>
+</div>
+{%endblock%}

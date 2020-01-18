@@ -1,7 +1,18 @@
 {% extends 'base.html'%}
 {%block content%}
 <div class="container">
+    {% if messages%}
+    {%for message in messages%}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {%endfor%}
+    {%endif%}
     <br>
+
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -9,6 +20,7 @@
                 <th scope="col">Todo</th>
                 <th scope="col">complete</th>
                 <th scope="col">created</th>
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -16,31 +28,21 @@
             {%if item.completed%}
             <tr class="table-success">
                 <th scope="row">{{item.id}}</th>
-                <td class="striker">{{item.item}}</td>
-                <td>{{item.completed}}</td>
+                <td> <a href="{%url 'edit' item.id%}">{{item.item}}</a> </td>
+                <td> <a href="{%url 'complete' item.id%}">Done</a> </td>
                 <td>{{item.created}}</td>
+                <td><a href="{%url 'delete' item.id%}">Delete</a></td>
             </tr>
             {%else%}
             <tr>
                 <th scope="row">{{item.id}}</th>
-                <td>{{item.item}}</td>
-                <td>{{item.completed}}</td>
+                <td> <a href="{%url 'edit' item.id%}">{{item.item}}</a> </td>
+                <td> <a href="{%url 'complete' item.id%}">UnDone</a> </td>
                 <td>{{item.created}}</td>
+                <td><a href="{%url 'delete' item.id%}">Delete</a></td>
             </tr>
             {%endif%}
             {%endfor%}
-            <!-- <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr> -->
         </tbody>
     </table>
 </div>
